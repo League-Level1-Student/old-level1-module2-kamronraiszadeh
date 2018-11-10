@@ -1,3 +1,5 @@
+import javax.swing.JOptionPane;
+
 /*
  *    Copyright (c) The League of Amazing Programmers 2013-2017
  *    Level 1
@@ -6,11 +8,18 @@
 public class TeaMaker {
 
 	/* Figure out how to make a cup of tea using the classes below */
-public static void main(String[] args) {
+	public static void main(String[] args) {
+		String flavor = JOptionPane.showInputDialog("What flavor don you want your tea?");
+		TeaBag tea = new TeaBag(flavor);
+		Kettle kettle = new Kettle();
 
+		kettle.boil();
+		kettle.getWater();
+		Cup cup = new Cup();
+		cup.makeTea(tea, kettle.getWater());
 
-}
-	
+	}
+
 }
 
 class TeaBag {
@@ -68,5 +77,3 @@ class Cup {
 	}
 
 }
-
-
